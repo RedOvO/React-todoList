@@ -31,4 +31,9 @@ textarea{
 
 li{
   width: 400px;
+  height: 40px;
+  border-style: dotted;
+  border-color: white white grey white;
+  border-width: 1px;
+  margin-top: 10px;
 }
