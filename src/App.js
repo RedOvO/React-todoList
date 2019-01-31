@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import AppTop from './AppTop';
+import AppList from './AppList'
 import './App.css';
 
+/**
+ * todo应用，
+ * 实现顶部有一个输入框和按钮，
+ * 下面是一个列表，初始化为空，
+ * 在输入框输入内容，点击按钮，下面列表会增加这一项，
+ * 并且输入框清空。点击列表中的一项，这项会删除。
+ */
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <AppTop />
+        <AppList />
       </div>
     );
   }
