@@ -15,14 +15,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item : '1',
-    }
-    this.callback = this.callback.bind(this);
+			List: ['aaa', 'bbb'],
+		}
+    this.topCallback = this.topCallback.bind(this);
+    this.listCallback = this.listCallback.bind(this);
   }
   
-  callback(item) {
+  topCallback(item) {
     this.setState({
-      item: item,
+      List: [...this.state.List, item],
+    })
+  }
+
+  listCallback(list){
+    this.setState({
+      List: list,
     })
   }
 
@@ -30,8 +37,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>ToDoList</h1>
-        <AppTop callback = {this.callback}/>
-        <AppList item ={this.state.item}/>
+        <AppTop callback = {this.topCallback}/>
+        <AppList list = {this.state.List}
+                 callback = {this.listCallback}/>
       </div>
     );
   }
