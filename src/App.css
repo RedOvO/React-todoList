@@ -30,6 +30,7 @@ textarea{
 }
 
 li{
+  list-style: none;
   width: 400px;
   height: 40px;
   border-style: dotted;
