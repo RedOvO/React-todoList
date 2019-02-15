@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AppTop from './AppTop';
-import AppList from './AppList'
+import AppList from './AppList';
 import './App.css';
 
 /**

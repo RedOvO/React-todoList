@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
+import PropTypes from 'prop-types';
 
 class AppTop extends Component {
 	constructor(props) {
@@ -12,7 +13,8 @@ class AppTop extends Component {
 	}
 
 	handleClick() {
-		this.props.callback(this.state.inputValue);
+		const { callback } = this.props;
+		callback(this.state.inputValue);
 		this.setState({
 			inputValue: '',
 		})
@@ -39,6 +41,10 @@ class AppTop extends Component {
 			</div>
 		)
 	}
+}
+
+AppTop.PropTypes = {
+	callback: PropTypes.func
 }
 
 export default AppTop;

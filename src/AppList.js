@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './App.css'
+import './App.css';
+import PropTypes from 'prop-types';
+
 
 class AppList extends Component {
 	constructor(props) {
@@ -9,17 +11,19 @@ class AppList extends Component {
 	}
 
 	handleClick(index) {
+		const { list, callback } = this.props;
 		console.log(index);
-		this.props.list.splice(index, 1);
-		this.props.callback(this.props.list);
+		list.splice(index, 1);
+		callback(list);
 	}
 
 	render() {
+		const { list } = this.props;
 		return (
 			<div className='AppList'>
 				<ul>
 					{ 
-						this.props.list.map((item, index) => {
+						list.map((item, index) => {
 						return (
 							<li className='one_input' key={index}>
 								<label>{item}</label>
@@ -34,6 +38,11 @@ class AppList extends Component {
 			</div>
 		)
 	}
+}
+
+AppList.PropTypes = {
+	list : PropTypes.array,
+	callback : PropTypes.func
 }
 
 export default AppList;
