@@ -44,7 +44,7 @@ class AppTop extends Component {
 }
 
 AppTop.PropTypes = {
-	callback: PropTypes.func
+	callback : PropTypes.func
 }
 
 export default AppTop;
